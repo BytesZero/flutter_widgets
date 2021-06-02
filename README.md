@@ -1,16 +1,11 @@
-# flutter_widgets
+# Flutter Widgets 示例集合
 
-A new Flutter project.
+本项目基于 `Flutter 2.2.1` 版本，是系列 Flutter Widget 示例源码，有对应的文章详细讲解，持续更新敬请关注。
 
-## Getting Started
+## 掘金专栏
+- [欢迎关注](https://juejin.cn/column/6968894876251324447)
 
-This project is a starting point for a Flutter application.
+## 已完成文章
 
-A few resources to get you started if this is your first Flutter project:
+- [x] [https://www.yuque.com/zeroflutter/alr0mt/ci71of](https://www.yuque.com/zeroflutter/alr0mt/ci71of)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
