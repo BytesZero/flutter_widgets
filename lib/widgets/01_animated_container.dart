@@ -18,6 +18,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
   Color color = Colors.blueAccent;
   Alignment alignment = Alignment.center;
   double borderWidth = 4;
+  Color borderColor = Colors.grey;
   double radius = 10;
 
   @override
@@ -56,7 +57,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
                 color: color,
                 border: Border.all(
                   width: borderWidth,
-                  color: color.withOpacity(0.4),
+                  color: borderColor,
                 ),
                 borderRadius: BorderRadius.circular(radius),
                 boxShadow: [
@@ -104,6 +105,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
     this.padding = padding.toDouble();
     this.color = Color.fromARGB(255, r, g, b);
     this.alignment = Alignment(x - 1, y - 1);
+    this.borderColor = Color.fromARGB(255, ~r, ~g, ~b);
     this.borderWidth = borderWidth.toDouble();
     this.radius = radius.toDouble();
     setState(() {});
