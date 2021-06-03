@@ -20,8 +20,8 @@ class CListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text('#1'),
-      title: Text('AnimatedContainer'),
+      leading: Text(leading),
+      title: Text('$title'),
       trailing: Icon(Icons.keyboard_arrow_right_outlined),
       onTap: () {
         if (onTap != null) {
