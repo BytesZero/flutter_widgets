@@ -53,6 +53,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
               // color: color,
               alignment: alignment,
               duration: const Duration(milliseconds: 500),
+              curve: Curves.linearToEaseOut,
               decoration: BoxDecoration(
                 color: color,
                 border: Border.all(
