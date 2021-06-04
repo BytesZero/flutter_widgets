@@ -8,5 +8,5 @@
 ## 已完成文章
 
 - [x] [AnimatedContainer](https://juejin.cn/post/6969359031903191077)
-- [ ] ClipRRect、ClipRect、ClipOval、ClipPath、CustomClipper
+- [x] [ClipRRect、ClipRect、ClipOval、ClipPath、CustomClipper](https://juejin.cn/post/6969724856514379790)
 
