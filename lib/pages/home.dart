@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/pages/page_data.dart';
 import '../widgets/common/common_list_tile.dart';
 import '../widgets/01_animated_container.dart';
-import '../widgets/02_clip.dart';
+import '../widgets/03_clip.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -18,22 +19,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CListTile(
-              leading: '#1',
-              title: 'AnimatedContainer',
-              pushPage: AnimatedContainerPage(),
-            ),
-            CListTile(
-              leading: '#2',
-              title: 'ClipRRect、ClipRect、ClipOval、ClipPath、CustomClipper',
-              pushPage: ClipPage(),
-            ),
-          ],
-        ),
+      body: ListView.separated(
+        itemCount: pageList.length,
+        separatorBuilder: (BuildContext context, int index) {
+          return Divider(height: 1);
+        },
+        itemBuilder: (BuildContext context, int index) {
+          var item = pageList[index];
+          return CListTile(
+            leading: '${index + 1}',
+            title: item.title,
+            pushPage: item.page,
+          );
+        },
       ),
     );
   }
