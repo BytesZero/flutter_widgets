@@ -16,6 +16,7 @@ class _AnimatedPageState extends State<AnimatedPage> {
   String img2 =
       'https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500';
   Duration duration = Duration(milliseconds: 300);
+  var spacing = 80.0;
   var width = 100.0;
   var height = 100.0;
   var padding = 0.0;
@@ -41,12 +42,14 @@ class _AnimatedPageState extends State<AnimatedPage> {
             children: [
               GestureDetector(
                 onTap: () {
+                  // 点击改变边距
                   this.padding = padding == 0 ? 30 : 0;
                   setState(() {});
                 },
                 child: AnimatedPadding(
                   duration: duration,
                   curve: Curves.easeIn,
+                  // 设置边距
                   padding: EdgeInsets.all(padding),
                   child: DescContainer(
                     height: height,
@@ -57,8 +60,37 @@ class _AnimatedPageState extends State<AnimatedPage> {
                 ),
               ),
               SizedBox(
-                height: 20,
-                width: 20,
+                height: spacing,
+                width: spacing,
+              ),
+              GestureDetector(
+                onTap: () {
+                  var x = Random.secure().nextInt(3);
+                  var y = Random.secure().nextInt(3);
+                  // Alignment 设置对齐方式是由 [-1、0、1] 设置 x 和 y 来组成的
+                  this.alignment = Alignment(x - 1, y - 1);
+                  setState(() {});
+                },
+                // 背景
+                child: Container(
+                  height: 200,
+                  color: Colors.grey[350],
+                  child: AnimatedAlign(
+                    // 设置对齐方式
+                    alignment: alignment,
+                    duration: duration,
+                    child: DescContainer(
+                      height: 60,
+                      width: 180,
+                      color: Colors.amber,
+                      text: 'AnimatedAlign',
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
               ),
               GestureDetector(
                 onTap: () {
@@ -103,34 +135,8 @@ class _AnimatedPageState extends State<AnimatedPage> {
                 ),
               ),
               SizedBox(
-                height: 20,
-                width: 20,
-              ),
-              GestureDetector(
-                onTap: () {
-                  var x = Random.secure().nextInt(3);
-                  var y = Random.secure().nextInt(3);
-                  this.alignment = Alignment(x - 1, y - 1);
-                  setState(() {});
-                },
-                child: Container(
-                  height: 200,
-                  color: Colors.grey[350],
-                  child: AnimatedAlign(
-                    alignment: alignment,
-                    duration: duration,
-                    child: DescContainer(
-                      height: 60,
-                      width: 180,
-                      color: Colors.amber,
-                      text: 'AnimatedAlign',
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-                width: 20,
+                height: spacing,
+                width: spacing,
               ),
               GestureDetector(
                 onTap: () {
@@ -138,8 +144,11 @@ class _AnimatedPageState extends State<AnimatedPage> {
                   setState(() {});
                 },
                 child: AnimatedOpacity(
+                  // 设置透明度
                   opacity: opacity,
+                  // 设置动画时长
                   duration: duration,
+                  // 设置动画曲线
                   curve: Curves.easeOut,
                   child: DescContainer(
                     height: 60,
@@ -151,8 +160,8 @@ class _AnimatedPageState extends State<AnimatedPage> {
                 ),
               ),
               SizedBox(
-                height: 20,
-                width: 20,
+                height: spacing,
+                width: spacing,
               ),
               GestureDetector(
                 onTap: () {
@@ -167,7 +176,7 @@ class _AnimatedPageState extends State<AnimatedPage> {
                     text: 'AnimatedCrossFade firstChild',
                   ),
                   secondChild: DescContainer(
-                    height: 60,
+                    height: 40,
                     width: 300,
                     color: Colors.pink,
                     text: 'AnimatedCrossFade secondChild',
@@ -176,7 +185,35 @@ class _AnimatedPageState extends State<AnimatedPage> {
                       ? CrossFadeState.showFirst
                       : CrossFadeState.showSecond,
                   duration: duration,
+                  layoutBuilder:
+                      (topChild, topChildKey, bottomChild, bottomChildKey) {
+                    return Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.center,
+                      children: <Widget>[
+                        Positioned(
+                          key: topChildKey,
+                          child: topChild,
+                        ),
+                        Positioned(
+                          key: bottomChildKey,
+                          // left: 0.0,
+                          top: 0.0,
+                          // right: 0.0,
+                          child: bottomChild,
+                        ),
+                      ],
+                    );
+                  },
                 ),
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
               ),
             ],
           ),
@@ -186,6 +223,7 @@ class _AnimatedPageState extends State<AnimatedPage> {
   }
 }
 
+/// 通用描述容器
 class DescContainer extends StatelessWidget {
   const DescContainer({
     Key? key,
@@ -194,9 +232,13 @@ class DescContainer extends StatelessWidget {
     required this.width,
     required this.text,
   }) : super(key: key);
+  // 背景颜色
   final Color color;
-  final double height;
+  // 宽度
   final double width;
+  // 高度
+  final double height;
+  // 文字
   final String text;
 
   @override
