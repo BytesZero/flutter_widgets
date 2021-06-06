@@ -21,7 +21,8 @@ List<PageEntity> pageList = [
     page: AnimatedContainerPage(),
   ),
   PageEntity(
-    title: 'AnimatedPadding、',
+    title:
+        'AnimatedPadding、AnimatedAlign、AnimatedPositioned、AnimatedOpacity、AnimatedCrossFade、AnimatedSize、AnimatedSwitcher',
     page: AnimatedPage(),
   ),
   PageEntity(

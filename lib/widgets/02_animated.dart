@@ -10,11 +10,8 @@ class AnimatedPage extends StatefulWidget {
   _AnimatedPageState createState() => _AnimatedPageState();
 }
 
-class _AnimatedPageState extends State<AnimatedPage> {
-  String img1 =
-      'https://images.pexels.com/photos/4588010/pexels-photo-4588010.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500';
-  String img2 =
-      'https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500';
+class _AnimatedPageState extends State<AnimatedPage>
+    with TickerProviderStateMixin {
   Duration duration = Duration(milliseconds: 300);
   var spacing = 80.0;
   var width = 100.0;
@@ -27,6 +24,8 @@ class _AnimatedPageState extends State<AnimatedPage> {
   var alignment = Alignment.center;
   var crossFirst = true;
   var opacity = 1.0;
+  var playing = false;
+  var size = 100.0;
 
   @override
   Widget build(BuildContext context) {
@@ -165,22 +164,26 @@ class _AnimatedPageState extends State<AnimatedPage> {
               ),
               GestureDetector(
                 onTap: () {
+                  // 点击切换
                   this.crossFirst = !crossFirst;
                   setState(() {});
                 },
                 child: AnimatedCrossFade(
+                  // 第一个 child
                   firstChild: DescContainer(
                     height: 60,
                     width: width,
                     color: Colors.black,
                     text: 'AnimatedCrossFade firstChild',
                   ),
+                  // 第二个 child
                   secondChild: DescContainer(
                     height: 40,
                     width: 300,
                     color: Colors.pink,
                     text: 'AnimatedCrossFade secondChild',
                   ),
+                  // 切换显示 child
                   crossFadeState: crossFirst
                       ? CrossFadeState.showFirst
                       : CrossFadeState.showSecond,
@@ -189,6 +192,7 @@ class _AnimatedPageState extends State<AnimatedPage> {
                       (topChild, topChildKey, bottomChild, bottomChildKey) {
                     return Stack(
                       clipBehavior: Clip.none,
+                      // 这里设置居中对齐
                       alignment: Alignment.center,
                       children: <Widget>[
                         Positioned(
@@ -197,6 +201,7 @@ class _AnimatedPageState extends State<AnimatedPage> {
                         ),
                         Positioned(
                           key: bottomChildKey,
+                          // 去掉左边和右边定位
                           // left: 0.0,
                           top: 0.0,
                           // right: 0.0,
@@ -205,6 +210,77 @@ class _AnimatedPageState extends State<AnimatedPage> {
                       ],
                     );
                   },
+                ),
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
+              ),
+              GestureDetector(
+                onTap: () {
+                  this.size = size == 200 ? 100 : 200;
+                  setState(() {});
+                },
+                child: AnimatedSize(
+                  duration: duration,
+                  // 这里要混入 TickerProviderStateMixin 才可以
+                  vsync: this,
+                  clipBehavior: Clip.antiAlias,
+                  alignment: Alignment.center,
+                  child: FlutterLogo(
+                    size: size,
+                  ),
+                  // child: DescContainer(
+                  //   color: Colors.pink[300]!,
+                  //   height: size,
+                  //   width: size,
+                  //   text: 'AnimatedSize',
+                  // ),
+                ),
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
+              ),
+              SizedBox(
+                height: spacing,
+                width: spacing,
+              ),
+              GestureDetector(
+                onTap: () {
+                  this.playing = !playing;
+                  setState(() {});
+                },
+                child: AnimatedSwitcher(
+                  duration: duration,
+                  transitionBuilder: (child, animation) {
+                    // return ScaleTransition(
+                    //   scale: animation,
+                    //   child: child,
+                    // );
+                    // return FadeTransition(
+                    //   opacity: animation,
+                    //   child: child,
+                    // );
+                    return ScaleTransition(
+                      scale: animation,
+                      child: FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    playing ? Icons.pause_circle : Icons.play_circle,
+                    // 这里的 key 非常重要
+                    key: ValueKey(playing),
+                    size: 80,
+                    color: Colors.blue,
+                  ),
                 ),
               ),
               SizedBox(
