@@ -9,4 +9,6 @@
 
 - [x] [AnimatedContainer](https://juejin.cn/post/6969359031903191077)
 - [x] [ClipRRect、ClipRect、ClipOval、ClipPath、CustomClipper](https://juejin.cn/post/6969724856514379790)
+- [x] [AnimatedPadding、AnimatedAlign、AnimatedPositioned、AnimatedOpacity](https://juejin.cn/post/6970295764983480333)
+- [x] [AnimatedCrossFade、AnimatedSize、AnimatedSwitcher](https://juejin.cn/post/6970544147031654431)
 
