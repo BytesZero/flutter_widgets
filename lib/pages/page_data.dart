@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/01_animated_container.dart';
 import '../widgets/02_animated.dart';
 import '../widgets/03_clip.dart';
+import 'list/listview/list_view_page.dart';
 
 /// 页面实体
 class PageEntity {
@@ -28,5 +29,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'ClipRRect、ClipRect、ClipOval、ClipPath、CustomClipper',
     page: ClipPage(),
+  ),
+  PageEntity(
+    title: 'ListView',
+    page: ListViewPage(),
   ),
 ];
