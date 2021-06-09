@@ -14,19 +14,25 @@ class _GridViewPageState extends State<GridViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListView 4 种构建方式'),
+        title: Text('ListView 5 种构建方式'),
       ),
-      // body: GridView(
-      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      //     crossAxisCount: 3,
-      //     mainAxisSpacing: 6,
-      //     crossAxisSpacing: 12,
-      //     childAspectRatio: 4 / 3,
-      //   ),
-      //   children: List.generate(100, (index) {
-      //     return getItem(index);
-      //   }),
-      // ),
+      body: GridView(
+        // 次轴固定数量的 GridDelegate
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          // 数量设置3
+          crossAxisCount: 3,
+          // 主轴间距
+          mainAxisSpacing: 6,
+          // 次轴间距
+          crossAxisSpacing: 12,
+          // 子项宽高比率
+          childAspectRatio: 4 / 3,
+        ),
+        // 构建子项，可以回看 ListView 篇
+        children: List.generate(100, (index) {
+          return getItem(index);
+        }),
+      ),
       // body: GridView(
       //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
       //     maxCrossAxisExtent: 110,
@@ -42,41 +48,54 @@ class _GridViewPageState extends State<GridViewPage> {
       //   ).toList(),
       // ),
       // body: GridView.builder(
+      //   // 最大次轴「范围」的 GridDelegate
       //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      //     // 最大次轴宽度（或高度）
       //     maxCrossAxisExtent: 140,
+      //     // 主轴间距
       //     mainAxisSpacing: 6,
+      //     // 次轴间距
       //     crossAxisSpacing: 12,
+      //     // 子项宽高比率
       //     childAspectRatio: 16 / 9,
       //   ),
       //   itemBuilder: (context, index) {
       //     return getItem(index);
       //   },
+      //   // 子项数量
+      //   itemCount: 100,
       // ),
       // body: GridView.count(
       //   crossAxisCount: 6,
+      //   mainAxisSpacing: 6,
+      //   crossAxisSpacing: 12,
+      //   childAspectRatio: 4 / 3,
       //   children: List.generate(100, (index) {
       //     return getItem(index);
       //   }),
       // ),
       // body: GridView.extent(
       //   maxCrossAxisExtent: 140,
+      //   mainAxisSpacing: 6,
+      //   crossAxisSpacing: 12,
+      //   childAspectRatio: 16 / 9,
       //   children: List.generate(100, (index) {
       //     return getItem(index);
       //   }),
       // ),
-      body: GridView.custom(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 140,
-          mainAxisSpacing: 6,
-          crossAxisSpacing: 12,
-          childAspectRatio: 16 / 9,
-        ),
-        childrenDelegate: SliverChildListDelegate(
-          List.generate(100, (index) {
-            return getItem(index);
-          }),
-        ),
-      ),
+      // body: GridView.custom(
+      //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      //     maxCrossAxisExtent: 140,
+      //     mainAxisSpacing: 6,
+      //     crossAxisSpacing: 12,
+      //     childAspectRatio: 16 / 9,
+      //   ),
+      //   childrenDelegate: SliverChildListDelegate(
+      //     List.generate(100, (index) {
+      //       return getItem(index);
+      //     }),
+      //   ),
+      // ),
     );
   }
 
