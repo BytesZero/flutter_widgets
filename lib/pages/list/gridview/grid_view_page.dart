@@ -14,7 +14,7 @@ class _GridViewPageState extends State<GridViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListView 5 种构建方式'),
+        title: Text('GridView 5 种构建方式'),
       ),
       body: GridView(
         // 次轴固定数量的 GridDelegate
@@ -101,7 +101,7 @@ class _GridViewPageState extends State<GridViewPage> {
 
   /// 获取子项目
   Widget getItem(int index) {
-    var item = listData[index % 5];
+    var item = listData[index % listTotal];
     return Image.network(
       item.url,
       fit: BoxFit.cover,

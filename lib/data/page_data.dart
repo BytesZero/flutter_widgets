@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/pages/list/gridview/grid_view_page.dart';
+import 'package:flutter_widgets/pages/list/wrap/wrap_page.dart';
 import '../widgets/01_animated_container.dart';
 import '../widgets/02_animated.dart';
 import '../widgets/03_clip.dart';
-import 'list/listview/list_view_page.dart';
+import '../pages/list/listview/list_view_page.dart';
 
 /// 页面实体
 class PageEntity {
@@ -38,5 +39,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'GridView',
     page: GridViewPage(),
+  ),
+  PageEntity(
+    title: 'Wrap',
+    page: WrapPage(),
   ),
 ];

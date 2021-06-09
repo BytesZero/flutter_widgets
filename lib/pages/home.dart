@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/pages/page_data.dart';
+import 'package:flutter_widgets/data/page_data.dart';
 import '../widgets/common/common_list_tile.dart';
-import '../widgets/01_animated_container.dart';
-import '../widgets/03_clip.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);

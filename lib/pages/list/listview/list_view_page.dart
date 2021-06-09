@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/data/list_data.dart';
 
@@ -70,7 +67,7 @@ class _ListViewPageState extends State<ListViewPage> {
 
   /// 获取子项目
   Widget getItem(int index) {
-    var item = listData[index % 5];
+    var item = listData[index % listTotal];
     return ListTile(
       leading: Image.network(
         item.url,
