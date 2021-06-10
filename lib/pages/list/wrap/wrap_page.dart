@@ -19,33 +19,33 @@ class _WrapPageState extends State<WrapPage> {
       // body: Wrap(
       //   children: List.generate(20, (index) => getItem(index)),
       // ),
-      // body: Wrap(
-      //   // 子项间距
-      //   spacing: 10,
-      //   // 行间距
-      //   runSpacing: 20,
-      //   children: List.generate(20, (index) => getItem(index)),
-      // ),
+      body: Wrap(
+        // 子项间距
+        spacing: 10,
+        // 行间距
+        runSpacing: 20,
+        children: List.generate(20, (index) => getItem(index)),
+      ),
       // body: Wrap(
       //   // 方向：垂直
       //   direction: Axis.vertical,
       //   children: List.generate(20, (index) => getItem(index)),
       // ),
-      body: Center(
-        child: Container(
-          height: 375,
-          width: double.maxFinite,
-          color: Colors.green.shade400,
-          child: Wrap(
-            spacing: 10,
-            // direction: Axis.vertical,
-            // alignment: WrapAlignment.spaceBetween,
-            // runAlignment: WrapAlignment.end,
-            // crossAxisAlignment: WrapCrossAlignment.end,
-            children: List.generate(7, (index) => getItem(index)),
-          ),
-        ),
-      ),
+      // body: Center(
+      //   child: Container(
+      //     height: 375,
+      //     width: double.maxFinite,
+      //     color: Colors.green.shade400,
+      //     child: Wrap(
+      //       spacing: 10,
+      //       direction: Axis.vertical,
+      //       alignment: WrapAlignment.spaceBetween,
+      //       runAlignment: WrapAlignment.end,
+      //       crossAxisAlignment: WrapCrossAlignment.end,
+      //       children: List.generate(7, (index) => getItem(index)),
+      //     ),
+      //   ),
+      // ),
     );
   }
 
