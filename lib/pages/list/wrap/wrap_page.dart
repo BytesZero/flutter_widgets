@@ -33,16 +33,16 @@ class _WrapPageState extends State<WrapPage> {
       // ),
       body: Center(
         child: Container(
-          // height: 375,
+          height: 375,
           width: double.maxFinite,
           color: Colors.green.shade400,
           child: Wrap(
             spacing: 10,
-            direction: Axis.vertical,
-            // alignment: WrapAlignment.spaceEvenly,
+            // direction: Axis.vertical,
+            // alignment: WrapAlignment.spaceBetween,
             // runAlignment: WrapAlignment.end,
             // crossAxisAlignment: WrapCrossAlignment.end,
-            children: List.generate(5, (index) => getItem(index)),
+            children: List.generate(7, (index) => getItem(index)),
           ),
         ),
       ),
