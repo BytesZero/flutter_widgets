@@ -2,6 +2,8 @@
 
 本项目基于 `Flutter 2.2.1` 版本，是系列 Flutter Widget 示例源码，有对应的文章详细讲解，持续更新敬请关注。
 
+[在线预览](https://yy1300326388.github.io/flutter_widgets/#/)
+
 ## 全景脑图
 
 > 持续更新中
