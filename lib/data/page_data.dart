@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
 import 'package:flutter_widgets/pages/list/gridview/grid_view_page.dart';
+import 'package:flutter_widgets/pages/list/stack/positioned_align_center_page.dart';
 import 'package:flutter_widgets/pages/list/stack/stack_page.dart';
 import 'package:flutter_widgets/pages/list/wrap/wrap_page.dart';
 import '../widgets/01_animated_container.dart';
@@ -58,5 +59,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'Stack',
     page: StackPage(),
+  ),
+  PageEntity(
+    title: 'Positioned、Align、Center',
+    page: Stack2Page(),
   ),
 ];
