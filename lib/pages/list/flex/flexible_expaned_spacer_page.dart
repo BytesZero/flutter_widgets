@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/widgets/common/bg_container.dart';
 
-/// Flexible、Row 页面
-class FlexiblePage extends StatefulWidget {
-  FlexiblePage({Key? key}) : super(key: key);
+/// Flexible、Expanded、Spacer 页面
+class FlexibleExpandedSpacerPage extends StatefulWidget {
+  FlexibleExpandedSpacerPage({Key? key}) : super(key: key);
 
   @override
-  _FlexiblePageState createState() => _FlexiblePageState();
+  _FlexibleExpandedSpacerPageState createState() =>
+      _FlexibleExpandedSpacerPageState();
 }
 
-class _FlexiblePageState extends State<FlexiblePage> {
+class _FlexibleExpandedSpacerPageState
+    extends State<FlexibleExpandedSpacerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,32 +169,6 @@ class _FlexiblePageState extends State<FlexiblePage> {
       alignment: Alignment.center,
       // 设置子项
       child: Text('$index'),
-    );
-  }
-}
-
-/// 通用背景
-class BgContainer extends StatelessWidget {
-  const BgContainer({
-    Key? key,
-    required this.child,
-    this.alignment = Alignment.center,
-  }) : super(key: key);
-  final Widget child;
-  final Alignment? alignment;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 375,
-      width: double.maxFinite,
-      margin: EdgeInsets.only(bottom: 10),
-      // 设置背景颜色
-      color: Colors.green.shade400,
-      // 居中
-      alignment: Alignment.center,
-      // 构建 Row 布局
-      child: child,
     );
   }
 }
