@@ -3,6 +3,7 @@ import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
 import 'package:flutter_widgets/pages/list/gridview/grid_view_page.dart';
 import 'package:flutter_widgets/pages/list/page/page_view_page.dart';
+import 'package:flutter_widgets/pages/list/page/page_view_page2.dart';
 import 'package:flutter_widgets/pages/list/stack/indexed_stack_page.dart';
 import 'package:flutter_widgets/pages/list/stack/positioned_align_center_page.dart';
 import 'package:flutter_widgets/pages/list/stack/stack_page.dart';
@@ -73,5 +74,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'PageView',
     page: PageViewPage(),
+  ),
+  PageEntity(
+    title: 'PageView2',
+    page: PageViewPage2(),
   ),
 ];
