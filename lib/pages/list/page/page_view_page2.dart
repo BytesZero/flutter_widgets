@@ -37,35 +37,34 @@ class _PageViewPage2State extends State<PageViewPage2> {
         title: Text('PageView - ZeroFlutter'),
       ),
       // 这里改为 PageView
-      // body: PageView(
-      //   scrollDirection: Axis.vertical,
-      //   // 设置控制器
-      //   controller: _controller,
-      //   // 设置子项集
-      //   children: children,
-      //   // 添加页面滑动改变后，去改变索引变量刷新页面来更新底部导航
-      //   onPageChanged: (value) {
-      //     currentIndex = value;
-      //     setState(() {});
-      //   },
-      // ),
+      body: PageView(
+        scrollDirection: Axis.horizontal,
+        // 设置控制器
+        controller: _controller,
+        // 设置子项集
+        children: children,
+        // 添加页面滑动改变后，去改变索引变量刷新页面来更新底部导航
+        onPageChanged: onPageChanged,
+      ),
       // body: PageView.builder(
       //   itemBuilder: (context, index) {
       //     return getItem(index);
       //   },
       //   itemCount: 3,
+      //   onPageChanged: onPageChanged,
       // ),
-      body: PageView.custom(
-        // SliverChildListDelegate
-        // childrenDelegate: SliverChildListDelegate(children),
-        // SliverChildBuilderDelegate
-        childrenDelegate: SliverChildBuilderDelegate(
-          (BuildContext context, int index) {
-            return getItem(index);
-          },
-          childCount: 3,
-        ),
-      ),
+      // body: PageView.custom(
+      // SliverChildListDelegate
+      // childrenDelegate: SliverChildListDelegate(children),
+      // SliverChildBuilderDelegate
+      //   childrenDelegate: SliverChildBuilderDelegate(
+      //     (BuildContext context, int index) {
+      //       return getItem(index);
+      //     },
+      //     childCount: 3,
+      //   ),
+      //   onPageChanged: onPageChanged,
+      // ),
       // 底部导航栏
       bottomNavigationBar: BottomNavigationBar(
         // 当前页面索引
@@ -127,6 +126,12 @@ class _PageViewPage2State extends State<PageViewPage2> {
         ],
       ),
     );
+  }
+
+  /// 页面改变
+  void onPageChanged(int value) {
+    currentIndex = value;
+    setState(() {});
   }
 }
 
