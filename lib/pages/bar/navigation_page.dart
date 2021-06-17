@@ -52,15 +52,23 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
             BottomNavigationBar(
               // 当前页面索引
               currentIndex: currentIndex,
-              type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.white,
-              selectedItemColor: Colors.blue,
+              // 背景颜色
+              // backgroundColor: Colors.black,
+              // 选中颜色
+              selectedItemColor: Colors.orange,
+              // 未选中颜色
               unselectedItemColor: Colors.lightGreen,
+              // fixedColor: Colors.red,
+              // 选中图标主题
               selectedIconTheme: IconThemeData(
+                // 图标颜色
                 color: Colors.red,
+                // 图标大小
                 size: 32,
+                // 图标透明度
                 opacity: 1.0,
               ),
+              // 未选中图标主题
               unselectedIconTheme: IconThemeData(
                 color: Colors.blue,
                 size: 24,

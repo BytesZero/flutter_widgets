@@ -25,7 +25,10 @@ class _FloatActionBarPageState extends State<FloatActionBarPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        // shape: CircularNotchedRectangle(),
+        /// 圆形缺口矩形
+        shape: CircularNotchedRectangle(),
+
+        /// 自动缺口形状
         // shape: AutomaticNotchedShape(
         //   // 斜角矩形
         //   // BeveledRectangleBorder(
@@ -36,7 +39,8 @@ class _FloatActionBarPageState extends State<FloatActionBarPage> {
         //     borderRadius: BorderRadius.circular(40),
         //   ),
         // ),
-        shape: MyShape(),
+        /// 自定义形状
+        // shape: MyShape(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -74,6 +78,7 @@ class _FloatActionBarPageState extends State<FloatActionBarPage> {
   }
 }
 
+/// 自定义Shape
 class MyShape extends NotchedShape {
   @override
   Path getOuterPath(Rect host, Rect? guest) {
