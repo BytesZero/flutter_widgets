@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/pages/bar/navigation_page.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
 import 'package:flutter_widgets/pages/list/gridview/grid_view_page.dart';
@@ -78,5 +79,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'PageView2',
     page: PageViewPage2(),
+  ),
+  PageEntity(
+    title: 'BottomNavigationBar',
+    page: BottomNavigationBarPage(),
   ),
 ];
