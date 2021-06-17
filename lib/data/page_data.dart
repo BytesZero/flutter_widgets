@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/pages/bar/float_page.dart';
 import 'package:flutter_widgets/pages/bar/navigation_page.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
@@ -83,5 +84,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'BottomNavigationBar',
     page: BottomNavigationBarPage(),
+  ),
+  PageEntity(
+    title: 'FloatActionBar',
+    page: FloatActionBarPage(),
   ),
 ];
