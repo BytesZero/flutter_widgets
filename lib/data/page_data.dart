@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/pages/bar/app_bar_page.dart';
 import 'package:flutter_widgets/pages/bar/float_page.dart';
 import 'package:flutter_widgets/pages/bar/navigation_page.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
@@ -88,5 +89,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'FloatActionBar',
     page: FloatActionBarPage(),
+  ),
+  PageEntity(
+    title: 'AppBar',
+    page: AppBarPage(),
   ),
 ];
