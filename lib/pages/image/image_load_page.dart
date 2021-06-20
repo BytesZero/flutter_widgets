@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -30,33 +31,34 @@ class _ImageLoadPageState extends State<ImageLoadPage> {
         child: Column(
           children: [
             // 加载资源内的图片
-            // Image.asset(
-            //   getImg('img_01.jpeg'),
-            // ),
-            // Image.asset(
-            //   getIcon('icon_home.png'),
-            //   // 指定图片宽高
-            //   width: 24,
-            //   height: 24,
-            // ),
-            // SizedBox(height: 10),
-            // Image.asset(
-            //   'img_01.jpeg'.img,
-            // ),
-            // Image.asset(
-            //   'icon_home.png'.icon,
-            //   // 指定图片宽高
-            //   width: 24,
-            //   height: 24,
-            // ),
-            // SizedBox(height: 10),
-            // Image.network(
-            //   'https://images.pexels.com/photos/850359/pexels-photo-850359.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=375',
-            // ),
-            // SizedBox(height: 10),
-            // Image.file(File('file://test.png')),
-            // SizedBox(height: 10),
-            // Image.memory(memoryData),
+            Image.asset(
+              getImg('img_01.jpeg'),
+            ),
+            Image.asset(
+              getIcon('icon_home.png'),
+              // 指定图片宽高
+              width: 24,
+              height: 24,
+            ),
+            SizedBox(height: 10),
+            Image.asset(
+              'img_01.jpeg'.img,
+            ),
+            Image.asset(
+              'icon_home.png'.icon,
+              // 指定图片宽高
+              width: 24,
+              height: 24,
+            ),
+            SizedBox(height: 10),
+            Image.network(
+              'https://images.pexels.com/photos/850359/pexels-photo-850359.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=375',
+            ),
+            SizedBox(height: 10),
+            Image.file(File('file://test.png')),
+            SizedBox(height: 10),
+            Image.memory(memoryData),
+            SizedBox(height: 10),
             Image.asset('flutter_logo.png'.icon, package: 'flutter_icons'),
           ],
         ),
