@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets/pages/bar/app_bar_page.dart';
 import 'package:flutter_widgets/pages/bar/float_page.dart';
 import 'package:flutter_widgets/pages/bar/navigation_page.dart';
+import 'package:flutter_widgets/pages/image/image_load_page.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
 import 'package:flutter_widgets/pages/list/gridview/grid_view_page.dart';
@@ -93,5 +94,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'AppBar',
     page: AppBarPage(),
+  ),
+  PageEntity(
+    title: 'Image',
+    page: ImageLoadPage(),
   ),
 ];
