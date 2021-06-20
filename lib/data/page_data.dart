@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets/pages/bar/app_bar_page.dart';
 import 'package:flutter_widgets/pages/bar/float_page.dart';
 import 'package:flutter_widgets/pages/bar/navigation_page.dart';
+import 'package:flutter_widgets/pages/image/image_details_page.dart';
 import 'package:flutter_widgets/pages/image/image_load_page.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
@@ -98,5 +99,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'Image',
     page: ImageLoadPage(),
+  ),
+  PageEntity(
+    title: 'ImageDetails',
+    page: ImageDetilsPage(),
   ),
 ];
