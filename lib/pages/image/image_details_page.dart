@@ -35,77 +35,77 @@ class _ImageDetilsPageState extends State<ImageDetilsPage> {
         child: Column(
           children: [
             // 加载图片，指定宽高
-            // Container(
-            //   color: Colors.orange,
-            //   child: Image.network(
-            //     url,
-            //     width: 375,
-            //     height: 375,
-            //     alignment: Alignment.bottomCenter,
-            //   ),
-            // ),
-            // SizedBox(height: 10),
-            // // 缩放-头像
-            // Container(
-            //   color: Colors.orange,
-            //   width: 375,
-            //   height: 375,
-            //   alignment: Alignment.center,
-            //   // 椭圆剪裁
-            //   child: ClipOval(
-            //     // 设置头像
-            //     child: Image.network(
-            //       url,
-            //       width: 100,
-            //       height: 100,
-            //       fit: BoxFit.cover,
-            //     ),
-            //   ),
-            // ),
-            // // 缩放
-            // Container(
-            //   color: Colors.orange,
-            //   // 椭圆剪裁
-            //   child: Image.network(
-            //     url,
-            //     width: 375,
-            //     height: 375,
-            //     fit: BoxFit.contain,
-            //     alignment: Alignment.bottomRight,
-            //   ),
-            // ),
-            // SizedBox(height: 10),
-            // // 缩放
-            // Container(
-            //   color: Colors.orange,
-            //   // 椭圆剪裁
-            //   child: Image.network(
-            //     url,
-            //     width: 375,
-            //     height: 375,
-            //     fit: BoxFit.contain,
-            //     color: Colors.blue,
-            //     colorBlendMode: BlendMode.hue,
-            //   ),
-            // ),
-            // SizedBox(height: 10),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Image.asset(
-            //       'icon_home_unselect.png'.icon,
-            //       // color: Colors.blue,
-            //     ),
-            //     Image.asset(
-            //       'icon_home_unselect.png'.icon,
-            //       color: Colors.blue,
-            //     ),
-            //   ],
-            // ),
+            Container(
+              color: Colors.orange,
+              child: Image.network(
+                url,
+                width: 375,
+                height: 375,
+                alignment: Alignment.bottomCenter,
+              ),
+            ),
+            SizedBox(height: 10),
+            // 缩放-头像
+            Container(
+              color: Colors.orange,
+              width: 375,
+              height: 375,
+              alignment: Alignment.center,
+              // 椭圆剪裁
+              child: ClipOval(
+                // 设置头像
+                child: Image.network(
+                  url,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            // 缩放
+            Container(
+              color: Colors.orange,
+              // 椭圆剪裁
+              child: Image.network(
+                url,
+                width: 375,
+                height: 375,
+                fit: BoxFit.contain,
+                alignment: Alignment.bottomRight,
+              ),
+            ),
             SizedBox(height: 10),
             // 缩放
             Container(
               color: Colors.orange,
+              // 椭圆剪裁
+              child: Image.network(
+                url,
+                width: 375,
+                height: 375,
+                fit: BoxFit.contain,
+                color: Colors.blue,
+                colorBlendMode: BlendMode.hue,
+              ),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'icon_home_unselect.png'.icon,
+                  // color: Colors.blue,
+                ),
+                Image.asset(
+                  'icon_home_unselect.png'.icon,
+                  color: Colors.blue,
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            // 缩放
+            Container(
+              color: Colors.white,
               // 椭圆剪裁
               child: Image.network(
                 // 'test',
@@ -167,18 +167,18 @@ class _ImageDetilsPageState extends State<ImageDetilsPage> {
                 // repeat: ImageRepeat.noRepeat,
                 // repeat: ImageRepeat.repeat,
                 // repeat: ImageRepeat.repeatX,
-                // repeat: ImageRepeat.repeatY,
+                repeat: ImageRepeat.repeatY,
               ),
             ),
             SizedBox(height: 10),
-            // 重复
+            // 质量
             Container(
               color: Colors.orange,
               child: Image.network(
                 url3,
                 width: 375,
                 height: 375,
-                fit: BoxFit.contain,
+                fit: BoxFit.cover,
                 // 渲染质量参数调配
                 filterQuality: FilterQuality.none,
                 // filterQuality: FilterQuality.low,
