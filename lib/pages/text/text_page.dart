@@ -27,42 +27,72 @@ class _TextPageState extends State<TextPage> {
             //   child: Text("Text - ZeroFlutter"),
             // ),
             // 文字样式
+            // Container(
+            //   height: 120,
+            //   width: double.infinity,
+            //   alignment: Alignment.center,
+            //   child: Text(
+            //     "Text - ZeroFlutter",
+            //     style: TextStyle(
+            //       // 颜色蓝色
+            //       color: Colors.blue,
+            //       // 字号 24
+            //       fontSize: 24,
+            //       // 字重 粗
+            //       fontWeight: FontWeight.bold,
+            //       // 背景 橘色
+            //       // backgroundColor: Colors.orange,
+            //       // 高度
+            //       // height: 3,
+            //       // 每个文字之间的间距
+            //       // letterSpacing: 4,
+            //       // 每个单词之间的间距
+            //       // wordSpacing: 10,
+            //       // 文字样式
+            //       // fontStyle: FontStyle.normal,
+            //       // fontStyle: FontStyle.italic,
+            //       // 文字装饰
+            //       // decoration: TextDecoration.none,
+            //       decoration: TextDecoration.underline,
+            //       // decoration: TextDecoration.overline,
+            //       // decoration: TextDecoration.lineThrough,
+            //       // decorationStyle: TextDecorationStyle.solid,
+            //       // decorationStyle: TextDecorationStyle.double,
+            //       // decorationStyle: TextDecorationStyle.wavy,
+            //       // decorationStyle: TextDecorationStyle.dotted,
+            //       decorationStyle: TextDecorationStyle.wavy,
+            //       decorationColor: Colors.red,
+            //     ),
+            //   ),
+            // ),
+            // 设置字体文字
+            // Container(
+            //   height: 120,
+            //   width: double.infinity,
+            //   alignment: Alignment.center,
+            //   child: Text(
+            //     "Text - ZeroFlutter",
+            //     style: TextStyle(
+            //       // 颜色蓝色
+            //       color: Colors.blue,
+            //       // 字号 24
+            //       fontSize: 24,
+            //       // 设置字体
+            //       fontFamily: 'Caveat',
+            //       // 设置字重
+            //       fontWeight: FontWeight.w700,
+            //     ),
+            //   ),
+            // ),
+
+            // 设置对齐方式
             Container(
               height: 120,
               width: double.infinity,
-              alignment: Alignment.center,
               child: Text(
                 "Text - ZeroFlutter",
-                style: TextStyle(
-                  // 颜色蓝色
-                  color: Colors.blue,
-                  // 字号 24
-                  fontSize: 24,
-                  // 字重 粗
-                  fontWeight: FontWeight.bold,
-                  // 背景 橘色
-                  // backgroundColor: Colors.orange,
-                  // 高度
-                  // height: 3,
-                  // 每个文字之间的间距
-                  // letterSpacing: 4,
-                  // 每个单词之间的间距
-                  // wordSpacing: 10,
-                  // 文字样式
-                  // fontStyle: FontStyle.normal,
-                  // fontStyle: FontStyle.italic,
-                  // 文字装饰
-                  // decoration: TextDecoration.none,
-                  decoration: TextDecoration.underline,
-                  // decoration: TextDecoration.overline,
-                  // decoration: TextDecoration.lineThrough,
-                  // decorationStyle: TextDecorationStyle.solid,
-                  // decorationStyle: TextDecorationStyle.double,
-                  // decorationStyle: TextDecorationStyle.wavy,
-                  // decorationStyle: TextDecorationStyle.dotted,
-                  decorationStyle: TextDecorationStyle.wavy,
-                  decorationColor: Colors.red,
-                ),
+                textAlign: TextAlign.end,
+                textDirection: TextDirection.rtl,
               ),
             ),
           ],
