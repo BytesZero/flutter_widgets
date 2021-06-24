@@ -13,6 +13,7 @@ import 'package:flutter_widgets/pages/list/stack/indexed_stack_page.dart';
 import 'package:flutter_widgets/pages/list/stack/positioned_align_center_page.dart';
 import 'package:flutter_widgets/pages/list/stack/stack_page.dart';
 import 'package:flutter_widgets/pages/list/wrap/wrap_page.dart';
+import 'package:flutter_widgets/pages/text/text_page.dart';
 import '../widgets/01_animated_container.dart';
 import '../widgets/02_animated.dart';
 import '../widgets/03_clip.dart';
@@ -103,5 +104,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'ImageDetails',
     page: ImageDetilsPage(),
+  ),
+  PageEntity(
+    title: 'Text',
+    page: TextPage(),
   ),
 ];
