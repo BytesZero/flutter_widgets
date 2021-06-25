@@ -86,13 +86,67 @@ class _TextPageState extends State<TextPage> {
             // ),
 
             // 设置对齐方式
+            // Container(
+            //   height: 120,
+            //   width: double.infinity,
+            //   alignment: Alignment.center,
+            //   child: Text(
+            //     "Text - ZeroFlutter Text - ZeroFlutter  Text - ZeroFlutter  Text - ZeroFlutter  ",
+            //     // textAlign: TextAlign.center,
+            //     // textAlign: TextAlign.start,
+            //     // textAlign: TextAlign.end,
+            //     textAlign: TextAlign.left,
+            //     // textAlign: TextAlign.right,
+            //     // textAlign: TextAlign.justify,
+            //     textDirection: TextDirection.ltr,
+            //     // textDirection: TextDirection.rtl,
+            //   ),
+            // ),
+
+            // 设置换行与溢出显示样式
+            // Container(
+            //   color: Colors.blue,
+            //   height: 120,
+            //   width: 300,
+            //   alignment: Alignment.center,
+            //   child: Text(
+            //     "Text - ZeroFlutter Text - ZeroFlutter Text - ZeroFlutter",
+            //     style: TextStyle(
+            //       // 颜色蓝色
+            //       color: Colors.black,
+            //       // 字号 24
+            //       fontSize: 24,
+            //     ),
+            //     // 设置不换行
+            //     softWrap: false,
+            //     // 设置溢出样式
+            //     // overflow: TextOverflow.ellipsis,
+            //     // overflow: TextOverflow.fade,
+            //     // overflow: TextOverflow.clip,
+            //     // overflow: TextOverflow.visible,
+            //   ),
+            // ),
+            // 设置换行与溢出显示样式
             Container(
+              color: Colors.blue,
               height: 120,
               width: double.infinity,
+              alignment: Alignment.center,
               child: Text(
-                "Text - ZeroFlutter",
-                textAlign: TextAlign.end,
-                textDirection: TextDirection.rtl,
+                "Text - ZeroFlutter Text - ZeroFlutter Text - ZeroFlutter",
+                style: TextStyle(
+                  // 颜色蓝色
+                  color: Colors.black,
+                  // 字号 24
+                  fontSize: 24,
+                ),
+                // 设置不换行
+                softWrap: false,
+                // 设置溢出样式
+                // overflow: TextOverflow.ellipsis,
+                // overflow: TextOverflow.fade,
+                // overflow: TextOverflow.clip,
+                // overflow: TextOverflow.visible,
               ),
             ),
           ],
