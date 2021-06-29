@@ -6,6 +6,7 @@ import 'package:flutter_widgets/pages/box/box_page.dart';
 import 'package:flutter_widgets/pages/filter/filter_page.dart';
 import 'package:flutter_widgets/pages/image/image_details_page.dart';
 import 'package:flutter_widgets/pages/image/image_load_page.dart';
+import 'package:flutter_widgets/pages/indicator/indicator_page.dart';
 import 'package:flutter_widgets/pages/list/flex/column_row_page.dart';
 import 'package:flutter_widgets/pages/list/flex/flexible_expaned_spacer_page.dart';
 import 'package:flutter_widgets/pages/list/gridview/grid_view_page.dart';
@@ -118,5 +119,9 @@ List<PageEntity> pageList = [
   PageEntity(
     title: 'Filter',
     page: FilterPage(),
+  ),
+  PageEntity(
+    title: 'Indicator',
+    page: IndicatorPage(),
   ),
 ];
