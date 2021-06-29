@@ -10,18 +10,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ColorFiltered(
-      colorFilter: ColorFilter.mode(
-        Colors.grey,
-        BlendMode.saturation,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: MyHomePage(title: 'Flutter Widgets'),
-      ),
+      home: MyHomePage(title: 'Flutter Widgets'),
     );
+    // return ColorFiltered(
+    //   colorFilter: ColorFilter.mode(
+    //     Colors.blue,
+    //     BlendMode.saturation,
+    //   ),
+    //   child: MaterialApp(
+    //     debugShowCheckedModeBanner: false,
+    //     theme: ThemeData(
+    //       primarySwatch: Colors.blue,
+    //     ),
+    //     home: MyHomePage(title: 'Flutter Widgets'),
+    //   ),
+    // );
   }
 }

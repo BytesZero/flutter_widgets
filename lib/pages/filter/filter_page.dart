@@ -113,11 +113,11 @@ class _FilterPageState extends State<FilterPage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // SizedBox(
-            //   height: 30,
-            //   width: 30,
-            // ),
-            // ImageDescWidget(),
+            SizedBox(
+              height: 30,
+              width: 30,
+            ),
+            ImageDescWidget(),
             SizedBox(
               height: 30,
               width: 30,
@@ -125,57 +125,82 @@ class _FilterPageState extends State<FilterPage> {
             ColorFiltered(
               // colorFilter: ColorFilter.linearToSrgbGamma(),
               // colorFilter: ColorFilter.srgbToLinearGamma(),
-              // colorFilter: ColorFilter.mode(
-              //   Colors.pink,
-              //   BlendMode.color,
-              // ),
+              colorFilter: ColorFilter.mode(
+                Colors.pink,
+                BlendMode.color,
+              ),
               // colorFilter: invert,
               // colorFilter: greyscale,
               // colorFilter: identity,
-              colorFilter: sepia,
+              // colorFilter: sepia,
               child: ImageDescWidget(),
             ),
-            // SizedBox(
-            //   height: 30,
-            //   width: 30,
-            // ),
-            // ImageFiltered(
-            //   imageFilter: ImageFilter.blur(
-            //     sigmaX: 4,
-            //     sigmaY: 4,
-            //     // tileMode: TileMode.clamp,
-            //     // tileMode: TileMode.decal,
-            //     // tileMode: TileMode.mirror,
-            //     // tileMode: TileMode.repeated,
-            //   ),
-            //   child: Image.asset(
-            //     'assets/images/img_03.jpeg',
-            //   ),
-            // ),
             SizedBox(
               height: 30,
               width: 30,
             ),
-            // BackdropFilter(
-            // filter: ImageFilter.matrix(Matrix4.rotationZ(3.14).storage),
-            // filter: ImageFilter.compose(
-            //   outer: ImageFilter.blur(
-            //     sigmaX: 10,
-            //     sigmaY: 10,
-            //   ),
-            //   inner: ImageFilter.matrix(Matrix4.skewX(0.6).storage),
-            // ),
-            // filter: ImageFilter.blur(
-            //   sigmaX: 10,
-            //   sigmaY: 10,
-            // ),
-            //   filter: ColorFilter.mode(Colors.blue, BlendMode.saturation),
-            //   child: Image.asset(
-            //     'assets/images/img_03.jpeg',
-            //     width: 375,
-            //     height: 375,
-            //   ),
-            // ),
+            ImageFiltered(
+              // imageFilter: ImageFilter.blur(
+              //   sigmaX: 4,
+              //   sigmaY: 4,
+              //   // tileMode: TileMode.clamp,
+              //   // tileMode: TileMode.decal,
+              //   // tileMode: TileMode.mirror,
+              //   tileMode: TileMode.repeated,
+              // ),
+              // 缩放
+              // imageFilter:
+              //     ImageFilter.matrix(Matrix4.diagonal3Values(2, 2, 0).storage),
+              // 倾斜
+              // imageFilter: ImageFilter.matrix(Matrix4.skewY(pi / 8).storage),
+              imageFilter: ImageFilter.compose(
+                outer: ImageFilter.blur(
+                  sigmaX: 4,
+                  sigmaY: 4,
+                ),
+                inner: ImageFilter.matrix(Matrix4.skewY(pi / 8).storage),
+              ),
+              // child: ImageWidget(),
+              child: ImageDescWidget(),
+            ),
+            SizedBox(
+              height: 30,
+              width: 30,
+            ),
+            Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                // 背景
+                ImageWidget(),
+                // 添加剪裁
+                ClipRect(
+                  child: BackdropFilter(
+                    // 模糊过滤器
+                    filter: ImageFilter.blur(
+                      sigmaX: 0.5,
+                      sigmaY: 0.5,
+                    ),
+                    // 设置子项
+                    child: Container(
+                      color: Colors.white.withOpacity(0.4),
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(6),
+                      child: Text(
+                        '🌸 樱花 🌸',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+              width: 30,
+            ),
           ],
         ),
       ),
