@@ -10,27 +10,9 @@ class SliderPage extends StatefulWidget {
 }
 
 class _SliderPageState extends State<SliderPage> with TickerProviderStateMixin {
-  late AnimationController controller;
   double progress = 0.5;
-  double progress2 = 0;
+  double progress2 = 40;
   RangeValues _rangeValues = const RangeValues(40, 80);
-  @override
-  void initState() {
-    controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 3),
-    )..addListener(() {
-        setState(() {});
-      });
-    controller.repeat(reverse: true);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,21 +42,26 @@ class _SliderPageState extends State<SliderPage> with TickerProviderStateMixin {
               height: 10,
               width: 10,
             ),
-            Slider(
-              value: progress2,
-              min: 0,
-              max: 100,
-              label: '$progress2',
-              onChanged: (value) {
-                print('onChanged:$value');
-                setState(() {
-                  progress2 = value;
-                });
-              },
+            SliderTheme(
+              data: SliderThemeData(
+                showValueIndicator: ShowValueIndicator.always,
+              ),
+              child: Slider(
+                value: progress2,
+                min: 0,
+                max: 100,
+                label: '$progress2',
+                onChanged: (value) {
+                  print('onChanged:$value');
+                  setState(() {
+                    progress2 = value;
+                  });
+                },
+              ),
             ),
             SizedBox(
-              height: 10,
-              width: 10,
+              height: 30,
+              width: 30,
             ),
             Slider(
               value: progress2,
@@ -168,93 +155,21 @@ class _SliderPageState extends State<SliderPage> with TickerProviderStateMixin {
               height: 10,
               width: 10,
             ),
-            CupertinoSlider(
-              value: progress2,
-              max: 100,
-              divisions: 5,
-              activeColor: Colors.purple,
-              thumbColor: Colors.cyan,
-              onChanged: (value) {
-                setState(() {
-                  progress2 = value;
-                });
-              },
+            SizedBox(
+              width: double.infinity,
+              child: CupertinoSlider(
+                value: progress2,
+                max: 100,
+                divisions: 5,
+                activeColor: Colors.purple,
+                thumbColor: Colors.cyan,
+                onChanged: (value) {
+                  setState(() {
+                    progress2 = value;
+                  });
+                },
+              ),
             ),
-            //   LinearProgressIndicator(
-            //     value: controller.value,
-            //     minHeight: 10,
-            //   ),
-            //   SizedBox(
-            //     height: 10,
-            //     width: 10,
-            //   ),
-            //   LinearProgressIndicator(
-            //     value: controller.value,
-            //     backgroundColor: Colors.red,
-            //     valueColor: controller.drive(
-            //       ColorTween(
-            //         begin: Colors.greenAccent,
-            //         end: Colors.orange,
-            //       ),
-            //     ),
-            //   ),
-            //   SizedBox(
-            //     height: 30,
-            //     width: 30,
-            //   ),
-            //   Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //     children: [
-            //       CircularProgressIndicator(),
-            //       CircularProgressIndicator(
-            //         value: controller.value,
-            //       ),
-            //       CircularProgressIndicator(
-            //         strokeWidth: 10,
-            //       ),
-            //       CircularProgressIndicator(
-            //         backgroundColor: Colors.grey.withOpacity(0.4),
-            //         valueColor: controller.drive(
-            //           ColorTween(
-            //             begin: Colors.amber,
-            //             end: Colors.green,
-            //           ),
-            //         ),
-            //       ),
-            //       CircularProgressIndicator(
-            //         value: controller.value,
-            //         backgroundColor: Colors.grey.withOpacity(0.4),
-            //         valueColor: controller.drive(
-            //           ColorTween(
-            //             begin: Colors.blue,
-            //             end: Colors.pink,
-            //           ),
-            //         ),
-            //       ),
-            //       CircularProgressIndicator(
-            //         value: controller.value,
-            //         valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
-            //       ),
-            //     ],
-            //   ),
-            //   SizedBox(
-            //     height: 30,
-            //     width: 30,
-            //   ),
-            //   Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //     children: [
-            //       CircularProgressIndicator.adaptive(),
-            //       CupertinoActivityIndicator(),
-            //       CupertinoActivityIndicator(
-            //         radius: 20,
-            //       ),
-            //       CupertinoActivityIndicator.partiallyRevealed(
-            //         radius: 20,
-            //         progress: controller.value,
-            //       ),
-            //     ],
-            //   )
           ],
         ),
       ),
